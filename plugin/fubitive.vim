@@ -1,5 +1,5 @@
 function! s:function(name) abort
-  return function(substitute(a:name,'^s:',matchstr(expand('<sfile>'), '<SNR>\d\+_'),''))
+  return function(substitute(a:name,'^s:',expand('<SID>'),''))
 endfunction
 
 function! s:bitbucket_url(opts, ...) abort
