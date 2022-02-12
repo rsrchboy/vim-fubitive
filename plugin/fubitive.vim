@@ -65,4 +65,7 @@ if !exists('g:fugitive_browse_handlers')
   let g:fugitive_browse_handlers = []
 endif
 
-call insert(g:fugitive_browse_handlers, s:function('s:bitbucket_url'))
+" don't repeat ourselves!
+if index(g:fugitive_browse_handlers, s:function('s:bitbucket_url')) < 0
+    call insert(g:fugitive_browse_handlers, s:function('s:bitbucket_url'))
+endif
